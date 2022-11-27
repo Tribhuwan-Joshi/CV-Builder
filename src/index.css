@@ -11,9 +11,12 @@
   .font-hel {
     font-family: Arial, Helvetica, sans-serif;
   }
+  .border-groove{
+    border-style: groove;
+  }
 }
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 4px;
 }
 
 /* Track */
@@ -29,4 +32,9 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+section input{
+  border: 1px solid black;
+  height: 22px;
+  padding:1px;
 }

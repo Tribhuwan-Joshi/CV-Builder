@@ -1,15 +1,5 @@
 import React, { Component } from "react";
 
-class LeftSection extends Component {
-  render() {
-    return (
-      <section className="bg-slate-400 flex justify-center items-center">
-        <div className="h-[90%] shadow-md  w-[80%] bg-slate-100"></div>
-      </section>
-    );
-  }
-}
-
 class EducationData extends Component {
   render() {
     return (
@@ -53,7 +43,7 @@ class ContactData extends Component {
           <span className="text-sm font-semibold mr-4">Linkedin</span>{" "}
           <a
             href="www.youtube"
-            className="font-italic text-sm"
+            className="font-italic underline text-blue-600 text-sm"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -80,7 +70,7 @@ class RightSection extends Component {
           <header className="h-[12%] bg-blue-600 text-white flex p-2 items-center">
             <div className="right--nameInfo">
               <div className="name text-3xl">Tribhuwan Joshi</div>
-              <div className="pos">Senior Research Scientist</div>
+              <div className="profession">Senior Research Scientist</div>
             </div>
             {/* <div className="right--contact text-sm">
               <div className="right--mobileNo ">+91 12212345</div>
@@ -109,6 +99,145 @@ class RightSection extends Component {
               <ContactData />
             </div>
           </main>
+        </div>
+      </section>
+    );
+  }
+}
+
+class PersonalForm extends Component {
+  render() {
+    return (
+      <fieldset className="border-[1px] p-4 border-black">
+        <legend className="text-center font-semibold">
+          Personal information
+        </legend>
+        <div className=" grid grid-cols-2 grid-rows-3 gap-5 overflow-x-auto">
+          <div className="flex gap-3">
+            <label htmlFor="name">Name</label>
+            <input id="name" required />
+          </div>
+          <div className="flex gap-3">
+            <label htmlFor="profession">Profession</label>
+            <input id="profession" required />
+          </div>
+          <div className="flex gap-3">
+            <label htmlFor="phone">Phone</label>
+            <input type="tel" required id="phone" />
+          </div>
+          <div className="flex gap-3">
+            <label htmlFor="email">Email</label>
+            <input id="email" required type="email" />
+          </div>
+          <div className="col-start-1 col-end-3  flex gap-2 items-center  ">
+            <label htmlFor="linkedin">Linkedin Profile</label>
+            <input type="url" id="linkedin" className="w-[60%]" />
+          </div>
+        </div>
+      </fieldset>
+    );
+  }
+}
+class EducationForm extends Component {
+  render() {
+    return (
+      <fieldset className="border-[1px] p-4  border-black">
+        {" "}
+        <legend className="text-center font-semibold">
+          Education Background
+        </legend>
+        <div className="flex flex-col gap-6">
+          <div className="flex justify-between">
+            <div>
+              <label htmlFor="collegeName" className="mr-2">
+                College Name
+              </label>
+              <input type="text" id="collegeName" required />
+            </div>
+            <div>
+              <label htmlFor="profession" className="mr-2">
+                Degree
+              </label>
+              <input type="text" id="profession" required />
+            </div>
+          </div>
+          <div className="flex justify-evenly ">
+            <div>
+              <label className="mr-4" htmlFor="from-edu">
+                From
+              </label>
+              <input type="date" id="from-edu" required />
+            </div>
+            <div>
+              <label className="mr-4" htmlFor="to-edu">
+                To
+              </label>
+              <input type="date" id="to-edu" required />
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    );
+  }
+}
+class ExperienceForm extends Component {
+  render() {
+    return (
+      <fieldset className="border-[1px] p-4  border-black">
+        <legend className="text-center font-semibold">Experience</legend>
+        <div className="flex flex-col gap-5">
+          <div className="flex justify-between">
+            <div>
+              <label className="mr-2" htmlFor="company-name">
+                Company
+              </label>
+              <input id="company-name" required />
+            </div>
+            <div>
+              <label htmlFor="company-pos" className="mr-2">
+                Position
+              </label>
+              <input required id="company-pos" />
+            </div>
+          </div>
+          <div className="flex justify-between">
+            <div>
+              <label className="mr-2" htmlFor="work-form">
+                {" "}
+                Work From
+              </label>
+              <input type="date" required id="work-form" />
+            </div>
+            <div className="mr-4">
+              <label className="mr-2" htmlFor="work-to">
+                {" "}
+                To
+              </label>
+              <input type="date" id="work-to" required />
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    );
+  }
+}
+
+class LeftSection extends Component {
+  render() {
+    return (
+      <section className="bg-slate-400 flex justify-center items-center">
+        <div className="h-[90%] shadow-md p-2 w-[80%] bg-slate-100">
+          <div className="italic underline underline-offset-1 mb-4">
+            Please provide the information to build your cv{" "}
+          </div>
+          <form className="space-y-8">
+            <PersonalForm />
+            <EducationForm />
+            <ExperienceForm />
+            <button className="bg-gray-300 p-1 m-auto w-fit font-mono border-black border-[1px]  active:bg-gray-600 hover:bg-gray-500 hover:text-white">
+              Create CV
+            </button>
+          </form>
         </div>
       </section>
     );
