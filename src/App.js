@@ -25,7 +25,9 @@ export default class App extends Component {
           company: "Intellects",
           pos: "Junior Data Scientist",
           from: "12/02/2008",
+          tasks:""
         },
+        
       },
     };
     this.click = this.click.bind(this);

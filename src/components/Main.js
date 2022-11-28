@@ -216,6 +216,12 @@ class ExperienceForm extends Component {
               <input type="date" id="work-to" required />
             </div>
           </div>
+          <div className="w-[100%] h-[50px] bg-red-500">
+            <textarea
+              className="border-gray-700 w-full h-full text-sm outline-none border"
+              placeholder=" Describe your task briefly"
+            ></textarea>
+          </div>
         </div>
       </fieldset>
     );
