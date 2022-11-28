@@ -11,7 +11,7 @@
   .font-hel {
     font-family: Arial, Helvetica, sans-serif;
   }
-  .border-groove{
+  .border-groove {
     border-style: groove;
   }
 }
@@ -34,8 +34,8 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-section input{
+section input {
   border: 1px solid black;
   height: 22px;
-  padding:1px 2px;
+  padding: 1px 4px;
 }

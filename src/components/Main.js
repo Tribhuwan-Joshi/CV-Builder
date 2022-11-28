@@ -65,17 +65,13 @@ class ContactData extends Component {
 class RightSection extends Component {
   render() {
     return (
-      <section className="bg-yellow-400 flex justify-center items-center">
-        <div className="h-[90%] shadow-md overflow-y-auto  w-[60%] bg-slate-100 ">
-          <header className="h-[12%] bg-blue-600 text-white flex p-2 items-center">
+      <section className="bg-[#D8D9CF] flex justify-center items-center">
+        <div className="h-[90%] shadow-md overflow-y-auto  w-[60%] bg-white ">
+          <header className="h-[12%] bg-[#947EC3] text-white flex p-2 items-center">
             <div className="right--nameInfo">
               <div className="name text-3xl">Tribhuwan Joshi</div>
               <div className="profession">Senior Research Scientist</div>
             </div>
-            {/* <div className="right--contact text-sm">
-              <div className="right--mobileNo ">+91 12212345</div>
-              <div className="right--emailId">mycoolemail@gmail.com</div>
-            </div> */}
           </header>
           <main className="p-1 space-y-2 px-4">
             <div className="education ">
@@ -112,7 +108,7 @@ class PersonalForm extends Component {
         <legend className="text-center font-semibold">
           Personal information
         </legend>
-        <div className=" grid grid-cols-2 grid-rows-3 gap-5 overflow-x-auto">
+        <div className=" grid grid-cols-2 grid-rows-3 gap-2 overflow-x-auto">
           <div className="flex gap-3">
             <label htmlFor="name">Name</label>
             <input id="name" required />
@@ -237,7 +233,7 @@ class LeftSection extends Component {
           <div className="italic underline underline-offset-1 mb-4">
             Please provide the information to build your cv{" "}
           </div>
-          <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-8">
             <PersonalForm />
             <EducationForm />
             <ExperienceForm />
