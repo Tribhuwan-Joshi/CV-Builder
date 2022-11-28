@@ -224,19 +224,25 @@ class ExperienceForm extends Component {
 
 class LeftSection extends Component {
   render() {
+    const { click } = this.props;
     return (
       <section className="bg-slate-400 flex justify-center items-center">
-        <div className="h-[90%] shadow-md p-2 w-[80%] bg-slate-100">
+        <div className="h-[90%] overflow-y-auto  shadow-md p-2 w-[80%] bg-slate-100">
           <div className="italic underline underline-offset-1 mb-4">
             Please provide the information to build your cv{" "}
           </div>
-          <form className="space-y-8">
+          <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
             <PersonalForm />
             <EducationForm />
             <ExperienceForm />
-            <button className="bg-gray-300 p-1 m-auto w-fit font-mono border-black border-[1px]  active:bg-gray-600 hover:bg-gray-500 hover:text-white">
-              Create CV
-            </button>
+            <div className="w-full flex justify-center">
+              <button
+                className="bg-gray-300 px-2 py-1 font-mono border-black border-[1px]  active:bg-gray-600 hover:bg-gray-500 hover:text-white"
+                onClick={click}
+              >
+                Create CV
+              </button>
+            </div>
           </form>
         </div>
       </section>
@@ -246,9 +252,10 @@ class LeftSection extends Component {
 
 export default class Main extends Component {
   render() {
+    const { click } = this.props;
     return (
-      <main className="flex-1 grid grid-cols-[repeat(2,minmax(500px,1fr))]">
-        <LeftSection />
+      <main className="flex-1 grid grid-cols-[repeat(2,minmax(700px,1fr))]">
+        <LeftSection click={click} />
         <RightSection />
       </main>
     );

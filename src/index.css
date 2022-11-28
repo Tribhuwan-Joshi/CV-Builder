@@ -17,6 +17,7 @@
 }
 ::-webkit-scrollbar {
   width: 4px;
+  height: 4px;
 }
 
 /* Track */
@@ -36,5 +37,5 @@
 section input{
   border: 1px solid black;
   height: 22px;
-  padding:1px;
+  padding:1px 2px;
 }
