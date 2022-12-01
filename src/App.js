@@ -17,7 +17,7 @@ export default class App extends Component {
         },
         edu: {
           college: "Your college",
-          degree: "Your degree",  
+          degree: "Your degree",
           edu_from: "2015",
           edu_to: "2020",
         },
@@ -44,29 +44,33 @@ export default class App extends Component {
       const personal = { name, profession, phone, email, linkedin };
       let college = document.querySelector('input[name="collegeName"]').value;
       let degree = document.querySelector('input[name="degree"]').value;
-      let edu_from = new Date(document.querySelector('input[name="edu_from"]').value).getFullYear();
-      let edu_to = new Date(document.querySelector('input[name="edu_to"]').value).getFullYear();
+      let edu_from = new Date(
+        document.querySelector('input[name="edu_from"]').value
+      ).getFullYear();
+      let edu_to = new Date(
+        document.querySelector('input[name="edu_to"]').value
+      ).getFullYear();
 
       const edu = { college, degree, edu_from, edu_to };
-      console.log(edu )
+
       let task = document.querySelector('textarea[name="task"]').value;
       let company = document.querySelector('input[name="companyName"]').value;
       let pos = document.querySelector("input[name='pos']").value;
-      let exp_from = new Date(document.querySelector("input[name='exp_from']").value).getFullYear();
-      let exp_to = new Date(document.querySelector("input[name='exp_to']").value).getFullYear();
+      let exp_from = new Date(
+        document.querySelector("input[name='exp_from']").value
+      ).getFullYear();
+      let exp_to = new Date(
+        document.querySelector("input[name='exp_to']").value
+      ).getFullYear();
 
       const exp = { task, company, pos, exp_from, exp_to };
 
-
-
-
-      
       this.setState({
         data: {
           ...this.state.data,
           personal: personal,
           edu: edu,
-          exp:exp
+          exp: exp,
         },
       });
     }

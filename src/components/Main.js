@@ -20,11 +20,8 @@ class EducationData extends Component {
             {edu.edu_from} - {edu.edu_to}
           </div>
         ) : (
-          <div className="edu--date text-sm">
-            from - to
-          </div>
+          <div className="edu--date text-sm">from - to</div>
         )}
-        
       </>
     );
   }
@@ -58,9 +55,7 @@ class ExperienceData extends Component {
             {exp.task}
           </div>
         ) : (
-          <div className="exp--work h-[100px] w-[80%] overflow-y-auto text-sm word-wrap">
-            
-          </div>
+          <div className="exp--work h-[100px] w-[80%] overflow-y-auto text-sm word-wrap"></div>
         )}
       </>
     );
@@ -108,7 +103,7 @@ class ContactData extends Component {
 class RightSection extends Component {
   render() {
     const { personal, edu, exp } = this.props.data;
-    console.log(personal, edu, exp);
+
     return (
       <section className="bg-[#D8D9CF] flex justify-center items-center">
         <div className="h-[90%] shadow-md overflow-y-auto  w-[60%] bg-white ">
@@ -119,13 +114,11 @@ class RightSection extends Component {
               ) : (
                 <div className="name text-3xl">Your Name</div>
               )}
-              {
-                personal.profession ? (
+              {personal.profession ? (
                 <div className="profession">{personal.profession}</div>
               ) : (
                 <div className="profession">Your Profession</div>
-                )
-              }
+              )}
             </div>
           </header>
           <main className="p-1 space-y-2 px-4">
@@ -237,9 +230,20 @@ class EducationForm extends Component {
                 College Name
               </label>
               {editOn ? (
-                <input type="text" id="collegeName" name="collegeName" required />
+                <input
+                  type="text"
+                  id="collegeName"
+                  name="collegeName"
+                  required
+                />
               ) : (
-                <input type="text" readOnly name="collegeName" id="collegeName" required />
+                <input
+                  type="text"
+                  readOnly
+                  name="collegeName"
+                  id="collegeName"
+                  required
+                />
               )}
             </div>
             <div>
@@ -249,7 +253,13 @@ class EducationForm extends Component {
               {editOn ? (
                 <input type="text" id="degree" name="degree" required />
               ) : (
-                <input type="text" name="degree" readOnly id="degree" required />
+                <input
+                  type="text"
+                  name="degree"
+                  readOnly
+                  id="degree"
+                  required
+                />
               )}
             </div>
           </div>
@@ -261,7 +271,13 @@ class EducationForm extends Component {
               {editOn ? (
                 <input type="date" id="edu_from" name="edu_from" required />
               ) : (
-                <input type="date" readOnly id="edu_from" name="edu_from" required />
+                <input
+                  type="date"
+                  readOnly
+                  id="edu_from"
+                  name="edu_from"
+                  required
+                />
               )}
             </div>
             <div>
@@ -318,7 +334,13 @@ class ExperienceForm extends Component {
               {editOn ? (
                 <input type="date" required name="exp_from" id="exp_from" />
               ) : (
-                <input type="date" readOnly name="exp_from" required id="exp_from" />
+                <input
+                  type="date"
+                  readOnly
+                  name="exp_from"
+                  required
+                  id="exp_from"
+                />
               )}
             </div>
             <div className="mr-4">
@@ -329,7 +351,13 @@ class ExperienceForm extends Component {
               {editOn ? (
                 <input type="date" id="exp_to" name="exp_to" required />
               ) : (
-                <input type="date" readOnly name="exp_to" id="exp_to" required />
+                <input
+                  type="date"
+                  readOnly
+                  name="exp_to"
+                  id="exp_to"
+                  required
+                />
               )}
             </div>
           </div>
@@ -337,12 +365,13 @@ class ExperienceForm extends Component {
             {editOn ? (
               <textarea
                 className="border-gray-700 w-full h-[full] p-1 text-sm outline-none border"
-                placeholder=" Describe your task briefly" name="task"
+                placeholder=" Describe your task briefly"
+                name="task"
               ></textarea>
             ) : (
               <textarea
-                  className="border-gray-700 w-full h-[full] p-1 text-sm outline-none border"
-                  name="task"
+                className="border-gray-700 w-full h-[full] p-1 text-sm outline-none border"
+                name="task"
                 placeholder=" Describe your task briefly"
                 readOnly
               ></textarea>
