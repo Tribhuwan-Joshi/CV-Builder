@@ -15,9 +15,9 @@ class EducationData extends Component {
         ) : (
           <div className="edu--college text-sm">College Name</div>
         )}
-        {edu.from ? (
+        {edu.edu_from && edu.edu_to ? (
           <div className="edu--date text-sm">
-            {edu.from} - {edu.to}
+            {edu.edu_from} - {edu.edu_to}
           </div>
         ) : (
           <div className="edu--date text-sm">
@@ -44,9 +44,9 @@ class ExperienceData extends Component {
         ) : (
           <div className="exp--company">Company Name</div>
         )}
-        {exp.form ? (
+        {exp.exp_from && exp.exp_to ? (
           <div className="exp--date text-sm">
-            {exp.from} - {exp.to}
+            {exp.exp_from} - {exp.exp_to}
           </div>
         ) : (
           <div className="exp--date text-sm">From - To</div>
@@ -237,41 +237,41 @@ class EducationForm extends Component {
                 College Name
               </label>
               {editOn ? (
-                <input type="text" id="collegeName" required />
+                <input type="text" id="collegeName" name="collegeName" required />
               ) : (
-                <input type="text" readOnly id="collegeName" required />
+                <input type="text" readOnly name="collegeName" id="collegeName" required />
               )}
             </div>
             <div>
-              <label htmlFor="profession" className="mr-2">
+              <label htmlFor="degree" className="mr-2">
                 Degree
               </label>
               {editOn ? (
-                <input type="text" id="profession" required />
+                <input type="text" id="degree" name="degree" required />
               ) : (
-                <input type="text" readOnly id="profession" required />
+                <input type="text" name="degree" readOnly id="degree" required />
               )}
             </div>
           </div>
           <div className="flex justify-evenly ">
             <div>
-              <label className="mr-4" htmlFor="from-edu">
+              <label className="mr-4" htmlFor="edu_from">
                 From
               </label>
               {editOn ? (
-                <input type="date" id="from-edu" required />
+                <input type="date" id="edu_from" name="edu_from" required />
               ) : (
-                <input type="date" readOnly id="from-edu" required />
+                <input type="date" readOnly id="edu_from" name="edu_from" required />
               )}
             </div>
             <div>
-              <label className="mr-4" htmlFor="to-edu">
+              <label className="mr-4" htmlFor="edu_to">
                 To
               </label>
               {editOn ? (
-                <input type="date" id="to-edu" required />
+                <input type="date" id="edu_to" name="edu_to" required />
               ) : (
-                <input type="date" id="to-edu" readOnly required />
+                <input type="date" id="edu_to" readOnly required />
               )}
             </div>
           </div>
@@ -289,47 +289,47 @@ class ExperienceForm extends Component {
         <div className="flex flex-col gap-5">
           <div className="flex justify-between">
             <div>
-              <label className="mr-2" htmlFor="company-name">
+              <label className="mr-2" htmlFor="companyName">
                 Company
               </label>
               {editOn ? (
-                <input id="company-name" required />
+                <input id="companyName" name="companyName" required />
               ) : (
-                <input id="company-name" readOnly required />
+                <input id="companyName" name="companyName" readOnly required />
               )}
             </div>
             <div>
-              <label htmlFor="company-pos" className="mr-2">
+              <label htmlFor="pos" className="mr-2">
                 Position
               </label>
               {editOn ? (
-                <input required id="company-pos" />
+                <input required id="pos" name="pos" />
               ) : (
-                <input readOnly required id="company-pos" />
+                <input readOnly name="pos" required id="company-pos" />
               )}
             </div>
           </div>
           <div className="flex justify-between">
             <div>
-              <label className="mr-2" htmlFor="work-form">
+              <label className="mr-2" htmlFor="exp_from">
                 {" "}
                 Work From
               </label>
               {editOn ? (
-                <input type="date" required id="work-form" />
+                <input type="date" required name="exp_from" id="exp_from" />
               ) : (
-                <input type="date" readOnly required id="work-form" />
+                <input type="date" readOnly name="exp_from" required id="exp_from" />
               )}
             </div>
             <div className="mr-4">
-              <label className="mr-2" htmlFor="work-to">
+              <label className="mr-2" htmlFor="exp_to">
                 {" "}
                 To
               </label>
               {editOn ? (
-                <input type="date" id="work-to" required />
+                <input type="date" id="exp_to" name="exp_to" required />
               ) : (
-                <input type="date" readOnly id="work-to" required />
+                <input type="date" readOnly name="exp_to" id="exp_to" required />
               )}
             </div>
           </div>
@@ -337,11 +337,12 @@ class ExperienceForm extends Component {
             {editOn ? (
               <textarea
                 className="border-gray-700 w-full h-[full] p-1 text-sm outline-none border"
-                placeholder=" Describe your task briefly"
+                placeholder=" Describe your task briefly" name="task"
               ></textarea>
             ) : (
               <textarea
-                className="border-gray-700 w-full h-[full] p-1 text-sm outline-none border"
+                  className="border-gray-700 w-full h-[full] p-1 text-sm outline-none border"
+                  name="task"
                 placeholder=" Describe your task briefly"
                 readOnly
               ></textarea>
