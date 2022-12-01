@@ -1,3 +1,4 @@
 # CV-Builder
-A CV Builder created to learn React 
-- Provide your information it will generate a classic CV
+A CV Builder created to learn React  
+Live -> https://tribhuwan-joshi.github.io/CV-Builder/
+- Input field will generates a classic CV
